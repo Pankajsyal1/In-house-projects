@@ -1,8 +1,28 @@
 {
-  "name": "in-house-projects",
+  "name": "markdownprox",
   "private": true,
-  "version": "0.0.0",
+  "version": "2.0.0",
   "type": "module",
+  "description": "MarkdownProX - Professional Markdown Editor with advanced features, real-time preview, and powerful writing tools",
+  "keywords": [
+    "markdown",
+    "editor",
+    "writing",
+    "tool",
+    "react",
+    "vite",
+    "tailwindcss"
+  ],
+  "author": "Pankaj",
+  "license": "MIT",
+  "homepage": "https://markdownprox.com",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pankaj/markdownprox"
+  },
+  "bugs": {
+    "url": "https://github.com/pankaj/markdownprox/issues"
+  },
   "scripts": {
     "dev": "vite",
     "build": "vite build",

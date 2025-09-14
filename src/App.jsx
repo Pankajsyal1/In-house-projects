@@ -1,11 +1,11 @@
-// StackEdit — React Clone (Super Powered Edition)
-// Advanced markdown editor with professional features
-// Features: Advanced toolbar, keyboard shortcuts, file management, search/replace, word count, multiple export formats, collaboration, plugins, and more.
+// MarkdownProX — Advanced Markdown Editor
+// Professional markdown editor with powerful features
+// Features: Advanced toolbar, keyboard shortcuts, file management, search/replace, word count, multiple export formats, real-time preview, and more.
 
 import React, { useEffect, useRef, useState, useCallback } from "react";
 
-export default function StackEditClone() {
-  const LOCAL_KEY = "stackedit_clone_content_v1";
+export default function MarkdownProX() {
+  const LOCAL_KEY = "markdownprox_content_v1";
   const [md, setMd] = useState("");
   const [showPreview, setShowPreview] = useState(true);
   const [isDark, setIsDark] = useState(false);
@@ -38,9 +38,9 @@ export default function StackEditClone() {
   const commandInputRef = useRef(null);
 
   // initial sample
-  const SAMPLE = `# Welcome to StackEdit — Super Powered Edition
+  const SAMPLE = `# Welcome to MarkdownProX
 
-This is a **full-featured** inline Markdown editor with advanced features.
+This is a **professional** markdown editor with powerful features and advanced capabilities.
 
 ## Features
 
@@ -416,7 +416,7 @@ Term 2
     if (saved) setMd(saved);
     else setMd(SAMPLE);
 
-    const theme = localStorage.getItem("stackedit_theme");
+    const theme = localStorage.getItem("markdownprox_theme");
     if (theme === "dark") setIsDark(true);
   }, [SAMPLE]);
 
@@ -429,7 +429,7 @@ Term 2
 
   useEffect(() => {
     document.documentElement.classList.toggle("dark", isDark);
-    localStorage.setItem("stackedit_theme", isDark ? "dark" : "light");
+    localStorage.setItem("markdownprox_theme", isDark ? "dark" : "light");
   }, [isDark]);
 
   // Enhanced markdown renderer with advanced features
@@ -817,10 +817,10 @@ Term 2
             <div className="flex items-center gap-4">
               <div className="flex items-center gap-3">
                 <div className="w-10 h-10 bg-gradient-to-br from-blue-500 via-purple-500 to-pink-500 rounded-xl flex items-center justify-center shadow-lg">
-                  <span className="text-white font-bold text-lg">SE</span>
+                  <span className="text-white font-bold text-lg">MX</span>
                 </div>
                 <h1 className="text-2xl font-bold bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent">
-                  StackEdit Pro
+                  MarkdownProX
                 </h1>
               </div>
 
@@ -1404,7 +1404,7 @@ Term 2
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
             <div className="flex items-center gap-3">
               <div className="w-8 h-8 bg-gradient-to-br from-blue-500 via-purple-500 to-pink-500 rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-sm">SE</span>
+                <span className="text-white font-bold text-sm">MX</span>
               </div>
               <div className="text-sm text-gray-600 dark:text-gray-400">
                 Made with <span className="text-red-500 animate-pulse">❤️</span> by <span className="font-semibold text-blue-600 dark:text-blue-400">Pankaj</span>
@@ -1412,7 +1412,7 @@ Term 2
             </div>
             <div className="flex items-center gap-6 text-sm text-gray-500 dark:text-gray-400">
               <div className="flex items-center gap-2">
-                <span>© 2024 StackEdit Pro</span>
+                <span>© {new Date().getFullYear()} MarkdownProX</span>
               </div>
               <div className="flex items-center gap-2">
                 <span>Powered by React & Tailwind CSS</span>
