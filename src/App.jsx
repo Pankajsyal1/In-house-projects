@@ -811,10 +811,18 @@ Term 2
   return (
     <div className={`min-h-screen ${isDark ? 'bg-gray-900 text-gray-100' : 'bg-gray-50 text-gray-900'}`}>
       <div className="max-w-7xl mx-auto py-6 px-4">
-        {/* Header with file tabs and controls */}
-        <header className="flex items-center justify-between mb-4">
-          <div className="flex items-center gap-4">
-            <h1 className="text-xl font-semibold">StackEdit — Super Powered Edition</h1>
+        {/* Header with file tabs and controls - Sticky */}
+        <header className="sticky top-0 z-40 backdrop-blur-md bg-white/90 dark:bg-gray-900/90 border-b border-gray-200 dark:border-gray-700 shadow-sm mb-4">
+          <div className="flex items-center justify-between p-4">
+            <div className="flex items-center gap-4">
+              <div className="flex items-center gap-3">
+                <div className="w-10 h-10 bg-gradient-to-br from-blue-500 via-purple-500 to-pink-500 rounded-xl flex items-center justify-center shadow-lg">
+                  <span className="text-white font-bold text-lg">SE</span>
+                </div>
+                <h1 className="text-2xl font-bold bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent">
+                  StackEdit Pro
+                </h1>
+              </div>
 
             {/* File tabs */}
             <div className="flex items-center gap-1">
@@ -914,6 +922,7 @@ Term 2
             <label className="cursor-pointer p-2 rounded bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600">
               📁 <input id="file-input" type="file" accept=".md,text/markdown" onChange={importMD} className="hidden" />
             </label>
+          </div>
           </div>
         </header>
 
@@ -1091,8 +1100,8 @@ Term 2
           </div>
         )}
 
-        {/* Enhanced Advanced Toolbar */}
-        <div className="bg-white dark:bg-gray-800 rounded-lg shadow-sm mb-4 border border-gray-200 dark:border-gray-700 overflow-hidden">
+        {/* Enhanced Advanced Toolbar - Sticky */}
+        <div className="sticky top-20 z-30 bg-white/95 dark:bg-gray-800/95 backdrop-blur-sm rounded-lg shadow-sm mb-4 border border-gray-200 dark:border-gray-700 overflow-hidden">
           {/* Main Toolbar */}
           <div className="flex flex-wrap items-center gap-1 p-3 border-b border-gray-200 dark:border-gray-700">
             {/* Text Formatting */}
@@ -1388,6 +1397,38 @@ Term 2
           </div>
         </div>
       </div>
+
+      {/* Beautiful Footer */}
+      <footer className="mt-12 border-t border-gray-200 dark:border-gray-700 bg-white/50 dark:bg-gray-900/50 backdrop-blur-sm">
+        <div className="max-w-7xl mx-auto px-4 py-8">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-4">
+            <div className="flex items-center gap-3">
+              <div className="w-8 h-8 bg-gradient-to-br from-blue-500 via-purple-500 to-pink-500 rounded-lg flex items-center justify-center">
+                <span className="text-white font-bold text-sm">SE</span>
+              </div>
+              <div className="text-sm text-gray-600 dark:text-gray-400">
+                Made with <span className="text-red-500 animate-pulse">❤️</span> by <span className="font-semibold text-blue-600 dark:text-blue-400">Pankaj</span>
+              </div>
+            </div>
+            <div className="flex items-center gap-6 text-sm text-gray-500 dark:text-gray-400">
+              <div className="flex items-center gap-2">
+                <span>© 2024 StackEdit Pro</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <span>Powered by React & Tailwind CSS</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <span>Version 2.0</span>
+              </div>
+            </div>
+          </div>
+          <div className="mt-4 pt-4 border-t border-gray-200 dark:border-gray-700 text-center">
+            <p className="text-xs text-gray-500 dark:text-gray-400">
+              A powerful markdown editor with advanced features • Built with modern web technologies
+            </p>
+          </div>
+        </div>
+      </footer>
     </div>
   );
 }
