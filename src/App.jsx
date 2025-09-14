@@ -824,105 +824,105 @@ Term 2
                 </h1>
               </div>
 
-            {/* File tabs */}
-            <div className="flex items-center gap-1">
-              {files.map(file => (
-                <div key={file.id} className="flex items-center gap-2">
-                  <button
-                    onClick={() => switchFile(file.id)}
-                    className={`px-3 py-1 rounded-t text-sm ${activeFileId === file.id
-                      ? 'bg-white dark:bg-gray-800 border-t border-l border-r border-gray-300 dark:border-gray-600'
-                      : 'bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600'
-                      }`}
-                  >
-                    {file.name}
-                  </button>
-                  {files.length > 1 && (
+              {/* File tabs */}
+              <div className="flex items-center gap-1">
+                {files.map(file => (
+                  <div key={file.id} className="flex items-center gap-2">
                     <button
-                      onClick={() => deleteFile(file.id)}
-                      className="text-gray-500 hover:text-red-500 text-xs"
+                      onClick={() => switchFile(file.id)}
+                      className={`px-3 py-1 rounded-t text-sm ${activeFileId === file.id
+                        ? 'bg-white dark:bg-gray-800 border-t border-l border-r border-gray-300 dark:border-gray-600'
+                        : 'bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600'
+                        }`}
                     >
-                      ×
+                      {file.name}
                     </button>
-                  )}
-                </div>
-              ))}
-              <button
-                onClick={newFile}
-                className="px-2 py-1 text-gray-500 hover:text-gray-700 dark:hover:text-gray-300 text-sm"
-                title="New File (Ctrl+N)"
-              >
-                +
-              </button>
-            </div>
-          </div>
-
-          <div className="flex items-center gap-2">
-            <button
-              onClick={() => setShowStats(!showStats)}
-              className="p-2 rounded bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600"
-              title="Statistics"
-            >
-              📊
-            </button>
-            <button
-              onClick={() => setShowToc(!showToc)}
-              className="p-2 rounded bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600"
-              title="Table of Contents"
-            >
-              📑
-            </button>
-            <button
-              onClick={() => setShowFindReplace(!showFindReplace)}
-              className="p-2 rounded bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600"
-              title="Find & Replace (Ctrl+F)"
-            >
-              🔍
-            </button>
-            <button
-              onClick={() => setSplit(s => !s)}
-              className="p-2 rounded bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600"
-              title="Toggle Split View"
-            >
-              {split ? '📱' : '🖥️'}
-            </button>
-            <button
-              onClick={() => setShowPreview(p => !p)}
-              className="p-2 rounded bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600"
-              title="Toggle Preview"
-            >
-              👁️
-            </button>
-            <button
-              onClick={() => setIsDark(d => !d)}
-              className="p-2 rounded bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600"
-              title="Toggle Theme"
-            >
-              {isDark ? '☀️' : '🌙'}
-            </button>
-
-            {/* Export dropdown */}
-            <div className="relative group">
-              <button className="p-2 rounded bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600">
-                💾
-              </button>
-              <div className="absolute right-0 mt-2 w-48 bg-white dark:bg-gray-800 rounded shadow-lg border border-gray-300 dark:border-gray-600 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
-                <button onClick={exportMD} className="block w-full text-left px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700 text-sm">
-                  Export Markdown
-                </button>
-                <button onClick={exportHTML} className="block w-full text-left px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700 text-sm">
-                  Export HTML
-                </button>
-                <button onClick={exportPDF} className="block w-full text-left px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700 text-sm">
-                  Export PDF
+                    {files.length > 1 && (
+                      <button
+                        onClick={() => deleteFile(file.id)}
+                        className="text-gray-500 hover:text-red-500 text-xs"
+                      >
+                        ×
+                      </button>
+                    )}
+                  </div>
+                ))}
+                <button
+                  onClick={newFile}
+                  className="px-2 py-1 text-gray-500 hover:text-gray-700 dark:hover:text-gray-300 text-sm"
+                  title="New File (Ctrl+N)"
+                >
+                  +
                 </button>
               </div>
             </div>
 
-            <label className="cursor-pointer p-2 rounded bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600">
-              📁 <input id="file-input" type="file" accept=".md,text/markdown" onChange={importMD} className="hidden" />
-            </label>
-          </div>
+            <div className="flex items-center gap-2">
+              <button
+                onClick={() => setShowStats(!showStats)}
+                className="p-2 rounded bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600"
+                title="Statistics"
+              >
+                📊
+              </button>
+              <button
+                onClick={() => setShowToc(!showToc)}
+                className="p-2 rounded bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600"
+                title="Table of Contents"
+              >
+                📑
+              </button>
+              <button
+                onClick={() => setShowFindReplace(!showFindReplace)}
+                className="p-2 rounded bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600"
+                title="Find & Replace (Ctrl+F)"
+              >
+                🔍
+              </button>
+              <button
+                onClick={() => setSplit(s => !s)}
+                className="p-2 rounded bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600"
+                title="Toggle Split View"
+              >
+                {split ? '📱' : '🖥️'}
+              </button>
+              <button
+                onClick={() => setShowPreview(p => !p)}
+                className="p-2 rounded bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600"
+                title="Toggle Preview"
+              >
+                👁️
+              </button>
+              <button
+                onClick={() => setIsDark(d => !d)}
+                className="p-2 rounded bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600"
+                title="Toggle Theme"
+              >
+                {isDark ? '☀️' : '🌙'}
+              </button>
+
+              {/* Export dropdown */}
+              <div className="relative group">
+                <button className="p-2 rounded bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600">
+                  💾
+                </button>
+                <div className="absolute right-0 mt-2 w-48 bg-white dark:bg-gray-800 rounded shadow-lg border border-gray-300 dark:border-gray-600 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                  <button onClick={exportMD} className="block w-full text-left px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700 text-sm">
+                    Export Markdown
+                  </button>
+                  <button onClick={exportHTML} className="block w-full text-left px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700 text-sm">
+                    Export HTML
+                  </button>
+                  <button onClick={exportPDF} className="block w-full text-left px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700 text-sm">
+                    Export PDF
+                  </button>
+                </div>
+              </div>
+
+              <label className="cursor-pointer p-2 rounded bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600">
+                📁 <input id="file-input" type="file" accept=".md,text/markdown" onChange={importMD} className="hidden" />
+              </label>
+            </div>
           </div>
         </header>
 
@@ -1106,60 +1106,60 @@ Term 2
           <div className="flex flex-wrap items-center gap-1 p-3 border-b border-gray-200 dark:border-gray-700">
             {/* Text Formatting */}
             <div className="flex items-center gap-1 border-r border-gray-300 dark:border-gray-600 pr-2">
-              <button onClick={cmdBold} className="p-2 rounded hover:bg-gray-100 dark:hover:bg-gray-700 font-bold" title="Bold (Ctrl+B)">B</button>
-              <button onClick={cmdItalic} className="p-2 rounded hover:bg-gray-100 dark:hover:bg-gray-700 italic" title="Italic (Ctrl+I)">I</button>
-              <button onClick={insertStrikethrough} className="p-2 rounded hover:bg-gray-100 dark:hover:bg-gray-700 line-through" title="Strikethrough">S</button>
-              <button onClick={cmdCode} className="p-2 rounded hover:bg-gray-100 dark:hover:bg-gray-700 font-mono text-sm" title="Inline Code">`</button>
+              <button onClick={cmdBold} className="p-1 rounded hover:bg-gray-100 dark:hover:bg-gray-700 font-bold" title="Bold (Ctrl+B)">B</button>
+              <button onClick={cmdItalic} className="p-1 rounded hover:bg-gray-100 dark:hover:bg-gray-700 italic" title="Italic (Ctrl+I)">I</button>
+              <button onClick={insertStrikethrough} className="p-1 rounded hover:bg-gray-100 dark:hover:bg-gray-700 line-through" title="Strikethrough">S</button>
+              <button onClick={cmdCode} className="p-1 rounded hover:bg-gray-100 dark:hover:bg-gray-700 font-mono text-sm" title="Inline Code">`</button>
             </div>
 
             {/* Headers */}
             <div className="flex items-center gap-1 border-r border-gray-300 dark:border-gray-600 pr-2">
-              <button onClick={cmdH1} className="p-2 rounded hover:bg-gray-100 dark:hover:bg-gray-700 font-bold text-lg" title="Heading 1">H1</button>
-              <button onClick={insertH2} className="p-2 rounded hover:bg-gray-100 dark:hover:bg-gray-700 font-bold text-base" title="Heading 2">H2</button>
-              <button onClick={insertH3} className="p-2 rounded hover:bg-gray-100 dark:hover:bg-gray-700 font-bold text-sm" title="Heading 3">H3</button>
-              <button onClick={insertH4} className="p-2 rounded hover:bg-gray-100 dark:hover:bg-gray-700 font-bold text-xs" title="Heading 4">H4</button>
-              <button onClick={insertH5} className="p-2 rounded hover:bg-gray-100 dark:hover:bg-gray-700 font-bold text-xs" title="Heading 5">H5</button>
-              <button onClick={insertH6} className="p-2 rounded hover:bg-gray-100 dark:hover:bg-gray-700 font-bold text-xs" title="Heading 6">H6</button>
+              <button onClick={cmdH1} className="p-1 rounded hover:bg-gray-100 dark:hover:bg-gray-700 font-bold text-lg" title="Heading 1">H1</button>
+              <button onClick={insertH2} className="p-1 rounded hover:bg-gray-100 dark:hover:bg-gray-700 font-bold text-base" title="Heading 2">H2</button>
+              <button onClick={insertH3} className="p-1 rounded hover:bg-gray-100 dark:hover:bg-gray-700 font-bold text-sm" title="Heading 3">H3</button>
+              <button onClick={insertH4} className="p-1 rounded hover:bg-gray-100 dark:hover:bg-gray-700 font-bold text-xs" title="Heading 4">H4</button>
+              <button onClick={insertH5} className="p-1 rounded hover:bg-gray-100 dark:hover:bg-gray-700 font-bold text-xs" title="Heading 5">H5</button>
+              <button onClick={insertH6} className="p-1 rounded hover:bg-gray-100 dark:hover:bg-gray-700 font-bold text-xs" title="Heading 6">H6</button>
             </div>
 
             {/* Lists */}
             <div className="flex items-center gap-1 border-r border-gray-300 dark:border-gray-600 pr-2">
-              <button onClick={insertUnorderedList} className="p-2 rounded hover:bg-gray-100 dark:hover:bg-gray-700" title="Unordered List Item">
+              <button onClick={insertUnorderedList} className="p-1 rounded hover:bg-gray-100 dark:hover:bg-gray-700" title="Unordered List Item">
                 <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
                   <path d="M3 4a1 1 0 000 2h.01a1 1 0 100-2H3zM3 8a1 1 0 000 2h.01a1 1 0 100-2H3zM3 12a1 1 0 100 2h.01a1 1 0 100-2H3zM7 4a1 1 0 000 2h10a1 1 0 100-2H7zM7 8a1 1 0 000 2h10a1 1 0 100-2H7zM7 12a1 1 0 100 2h10a1 1 0 100-2H7z" />
                 </svg>
               </button>
-              <button onClick={insertOrderedList} className="p-2 rounded hover:bg-gray-100 dark:hover:bg-gray-700" title="Ordered List Item">
+              <button onClick={insertOrderedList} className="p-1 rounded hover:bg-gray-100 dark:hover:bg-gray-700" title="Ordered List Item">
                 <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
                   <path d="M2 3a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 01-1 1H3a1 1 0 01-1-1V3zM2 7a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 01-1 1H3a1 1 0 01-1-1V7zM2 11a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 01-1 1H3a1 1 0 01-1-1v-2zM8 3a1 1 0 000 2h10a1 1 0 100-2H8zM8 7a1 1 0 000 2h10a1 1 0 100-2H8zM8 11a1 1 0 000 2h10a1 1 0 100-2H8z" />
                 </svg>
               </button>
-              <button onClick={insertUnorderedListBlock} className="p-2 rounded hover:bg-gray-100 dark:hover:bg-gray-700" title="Unordered List Block">
+              <button onClick={insertUnorderedListBlock} className="p-1 rounded hover:bg-gray-100 dark:hover:bg-gray-700" title="Unordered List Block">
                 <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
                   <path d="M3 4a1 1 0 000 2h.01a1 1 0 100-2H3zM3 8a1 1 0 000 2h.01a1 1 0 100-2H3zM3 12a1 1 0 100 2h.01a1 1 0 100-2H3zM7 4a1 1 0 000 2h10a1 1 0 100-2H7zM7 8a1 1 0 000 2h10a1 1 0 100-2H7zM7 12a1 1 0 000 2h10a1 1 0 100-2H7z" />
                 </svg>
               </button>
-              <button onClick={insertOrderedListBlock} className="p-2 rounded hover:bg-gray-100 dark:hover:bg-gray-700" title="Ordered List Block">
+              <button onClick={insertOrderedListBlock} className="p-1 rounded hover:bg-gray-100 dark:hover:bg-gray-700" title="Ordered List Block">
                 <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
                   <path d="M3 4a1 1 0 000 2h.01a1 1 0 100-2H3zM3 8a1 1 0 000 2h.01a1 1 0 100-2H3zM3 12a1 1 0 100 2h.01a1 1 0 100-2H3zM7 4a1 1 0 000 2h10a1 1 0 100-2H7zM7 8a1 1 0 000 2h10a1 1 0 100-2H7zM7 12a1 1 0 000 2h10a1 1 0 100-2H7z" />
                 </svg>
               </button>
-              <button onClick={insertNestedList} className="p-2 rounded hover:bg-gray-100 dark:hover:bg-gray-700" title="Nested List">
+              <button onClick={insertNestedList} className="p-1 rounded hover:bg-gray-100 dark:hover:bg-gray-700" title="Nested List">
                 <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
                   <path fillRule="evenodd" d="M3 4a1 1 0 000 2h.01a1 1 0 100-2H3zM3 8a1 1 0 000 2h.01a1 1 0 100-2H3zM3 12a1 1 0 100 2h.01a1 1 0 100-2H3zM7 4a1 1 0 000 2h10a1 1 0 100-2H7zM7 8a1 1 0 000 2h10a1 1 0 100-2H7zM7 12a1 1 0 000 2h10a1 1 0 100-2H7z" clipRule="evenodd" />
                 </svg>
               </button>
-              <button onClick={insertDefinitionList} className="p-2 rounded hover:bg-gray-100 dark:hover:bg-gray-700" title="Definition List">
+              <button onClick={insertDefinitionList} className="p-1 rounded hover:bg-gray-100 dark:hover:bg-gray-700" title="Definition List">
                 <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
                   <path fillRule="evenodd" d="M3 4a1 1 0 000 2h.01a1 1 0 100-2H3zM3 8a1 1 0 000 2h.01a1 1 0 100-2H3zM3 12a1 1 0 100 2h.01a1 1 0 100-2H3zM7 4a1 1 0 000 2h10a1 1 0 100-2H7zM7 8a1 1 0 000 2h10a1 1 0 100-2H7zM7 12a1 1 0 000 2h10a1 1 0 100-2H7z" clipRule="evenodd" />
                 </svg>
               </button>
-              <button onClick={insertCheckbox} className="p-2 rounded hover:bg-gray-100 dark:hover:bg-gray-700" title="Checkbox">
+              <button onClick={insertCheckbox} className="p-1 rounded hover:bg-gray-100 dark:hover:bg-gray-700" title="Checkbox">
                 <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
                   <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                 </svg>
               </button>
-              <button onClick={insertCheckboxChecked} className="p-2 rounded hover:bg-gray-100 dark:hover:bg-gray-700" title="Checked Checkbox">
+              <button onClick={insertCheckboxChecked} className="p-1 rounded hover:bg-gray-100 dark:hover:bg-gray-700" title="Checked Checkbox">
                 <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
                   <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                 </svg>
@@ -1168,26 +1168,26 @@ Term 2
 
             {/* Media & Links */}
             <div className="flex items-center gap-1 border-r border-gray-300 dark:border-gray-600 pr-2">
-              <button onClick={cmdLink} className="p-2 rounded hover:bg-gray-100 dark:hover:bg-gray-700" title="Link (Ctrl+K)">🔗</button>
-              <button onClick={cmdImage} className="p-2 rounded hover:bg-gray-100 dark:hover:bg-gray-700" title="Image">🖼</button>
+              <button onClick={cmdLink} className="p-1 rounded hover:bg-gray-100 dark:hover:bg-gray-700" title="Link (Ctrl+K)">🔗</button>
+              <button onClick={cmdImage} className="p-1 rounded hover:bg-gray-100 dark:hover:bg-gray-700" title="Image">🖼</button>
             </div>
 
             {/* Code & Tables */}
             <div className="flex items-center gap-1 border-r border-gray-300 dark:border-gray-600 pr-2">
-              <button onClick={insertCodeBlock} className="p-2 rounded hover:bg-gray-100 dark:hover:bg-gray-700 font-mono" title="Code Block">{`</>`}</button>
-              <button onClick={insertTable} className="p-2 rounded hover:bg-gray-100 dark:hover:bg-gray-700" title="Table">⊞</button>
+              <button onClick={insertCodeBlock} className="p-1 rounded hover:bg-gray-100 dark:hover:bg-gray-700 font-mono" title="Code Block">{`</>`}</button>
+              <button onClick={insertTable} className="p-1 rounded hover:bg-gray-100 dark:hover:bg-gray-700" title="Table">⊞</button>
             </div>
 
             {/* Advanced Features */}
             <div className="flex items-center gap-1 border-r border-gray-300 dark:border-gray-600 pr-2">
-              <button onClick={insertHighlight} className="p-2 rounded hover:bg-gray-100 dark:hover:bg-gray-700" title="Highlight">
+              <button onClick={insertHighlight} className="p-1 rounded hover:bg-gray-100 dark:hover:bg-gray-700" title="Highlight">
                 <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
                   <path d="M13.586 3.586a2 2 0 112.828 2.828l-.793.793-2.828-2.828.793-.793zM11.379 5.793L3 14.172V17h2.828l8.38-8.379-2.83-2.828z" />
                 </svg>
               </button>
-              <button onClick={insertMathInline} className="p-2 rounded hover:bg-gray-100 dark:hover:bg-gray-700" title="Math Inline">∑</button>
-              <button onClick={insertMathBlock} className="p-2 rounded hover:bg-gray-100 dark:hover:bg-gray-700" title="Math Block">∫</button>
-              <button onClick={insertMermaid} className="p-2 rounded hover:bg-gray-100 dark:hover:bg-gray-700" title="Mermaid Diagram">
+              <button onClick={insertMathInline} className="p-1 rounded hover:bg-gray-100 dark:hover:bg-gray-700" title="Math Inline">∑</button>
+              <button onClick={insertMathBlock} className="p-1 rounded hover:bg-gray-100 dark:hover:bg-gray-700" title="Math Block">∫</button>
+              <button onClick={insertMermaid} className="p-1 rounded hover:bg-gray-100 dark:hover:bg-gray-700" title="Mermaid Diagram">
                 <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
                   <path fillRule="evenodd" d="M3 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clipRule="evenodd" />
                 </svg>
@@ -1196,28 +1196,28 @@ Term 2
 
             {/* Time & Date */}
             <div className="flex items-center gap-1 border-r border-gray-300 dark:border-gray-600 pr-2">
-              <button onClick={insertTimestamp} className="p-2 rounded hover:bg-gray-100 dark:hover:bg-gray-700" title="Insert Timestamp">
+              <button onClick={insertTimestamp} className="p-1 rounded hover:bg-gray-100 dark:hover:bg-gray-700" title="Insert Timestamp">
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
               </button>
-              <button onClick={insertDate} className="p-2 rounded hover:bg-gray-100 dark:hover:bg-gray-700" title="Insert Date">📅</button>
-              <button onClick={insertTime} className="p-2 rounded hover:bg-gray-100 dark:hover:bg-gray-700" title="Insert Time">🕐</button>
+              <button onClick={insertDate} className="p-1 rounded hover:bg-gray-100 dark:hover:bg-gray-700" title="Insert Date">📅</button>
+              <button onClick={insertTime} className="p-1 rounded hover:bg-gray-100 dark:hover:bg-gray-700" title="Insert Time">🕐</button>
             </div>
 
             {/* Line Operations */}
             <div className="flex items-center gap-1 border-r border-gray-300 dark:border-gray-600 pr-2">
-              <button onClick={duplicateLine} className="p-2 rounded hover:bg-gray-100 dark:hover:bg-gray-700" title="Duplicate Line (Ctrl+D)">
+              <button onClick={duplicateLine} className="p-1 rounded hover:bg-gray-100 dark:hover:bg-gray-700" title="Duplicate Line (Ctrl+D)">
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
                 </svg>
               </button>
-              <button onClick={moveLineUp} className="p-2 rounded hover:bg-gray-100 dark:hover:bg-gray-700" title="Move Line Up (Alt+↑)">
+              <button onClick={moveLineUp} className="p-1 rounded hover:bg-gray-100 dark:hover:bg-gray-700" title="Move Line Up (Alt+↑)">
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 15l7-7 7 7" />
                 </svg>
               </button>
-              <button onClick={moveLineDown} className="p-2 rounded hover:bg-gray-100 dark:hover:bg-gray-700" title="Move Line Down (Alt+↓)">
+              <button onClick={moveLineDown} className="p-1 rounded hover:bg-gray-100 dark:hover:bg-gray-700" title="Move Line Down (Alt+↓)">
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
                 </svg>
@@ -1227,7 +1227,7 @@ Term 2
             {/* Emoji Picker */}
             <div className="flex items-center gap-1 border-r border-gray-300 dark:border-gray-600 pr-2">
               <div className="relative group">
-                <button className="p-2 rounded hover:bg-gray-100 dark:hover:bg-gray-700" title="Insert Emoji">😀</button>
+                <button className="p-1 rounded hover:bg-gray-100 dark:hover:bg-gray-700" title="Insert Emoji">😀</button>
                 <div className="absolute top-full left-0 mt-1 w-64 bg-white dark:bg-gray-800 rounded-lg shadow-lg border border-gray-200 dark:border-gray-700 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50 p-2">
                   <div className="grid grid-cols-8 gap-1">
                     {['😀', '😃', '😄', '😁', '😆', '😅', '😂', '🤣', '😊', '😇', '🙂', '🙃', '😉', '😌', '😍', '🥰', '😘', '😗', '😙', '😚', '😋', '😛', '😝', '😜', '🤪', '🤨', '🧐', '🤓', '😎', '🤩', '🥳', '😏'].map(emoji => (
@@ -1246,12 +1246,12 @@ Term 2
 
             {/* Other */}
             <div className="flex items-center gap-1">
-              <button onClick={cmdQuote} className="p-2 rounded hover:bg-gray-100 dark:hover:bg-gray-700" title="Blockquote">
+              <button onClick={cmdQuote} className="p-1 rounded hover:bg-gray-100 dark:hover:bg-gray-700" title="Blockquote">
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
                 </svg>
               </button>
-              <button onClick={insertHorizontalRule} className="p-2 rounded hover:bg-gray-100 dark:hover:bg-gray-700" title="Horizontal Rule">
+              <button onClick={insertHorizontalRule} className="p-1 rounded hover:bg-gray-100 dark:hover:bg-gray-700" title="Horizontal Rule">
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M20 12H4" />
                 </svg>
