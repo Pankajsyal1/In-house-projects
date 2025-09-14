@@ -51,6 +51,100 @@ export default function MarkdownProXLanding() {
     { key: 'F12', action: 'Fullscreen' }
   ];
 
+  const testimonials = [
+    {
+      name: "Sarah Chen",
+      role: "Technical Writer",
+      company: "TechCorp",
+      image: "👩‍💻",
+      quote: "MarkdownProX has revolutionized my documentation workflow. The real-time preview and keyboard shortcuts save me hours every day.",
+      rating: 5
+    },
+    {
+      name: "David Rodriguez",
+      role: "Software Developer",
+      company: "StartupXYZ",
+      image: "👨‍💻",
+      quote: "Best markdown editor I've ever used. The Mermaid diagram support and code highlighting are incredible.",
+      rating: 5
+    },
+    {
+      name: "Emily Johnson",
+      role: "Content Creator",
+      company: "BlogCorp",
+      image: "✍️",
+      quote: "The export options are amazing. I can publish to multiple platforms with just one click. Game changer!",
+      rating: 5
+    }
+  ];
+
+  const useCases = [
+    {
+      icon: '📚',
+      title: 'Documentation',
+      description: 'Create comprehensive technical documentation with diagrams, code blocks, and interactive elements.',
+      examples: ['API Documentation', 'User Guides', 'Technical Specs']
+    },
+    {
+      icon: '📝',
+      title: 'Blogging',
+      description: 'Write and format blog posts with ease. Export to multiple platforms or publish directly.',
+      examples: ['Personal Blogs', 'Technical Articles', 'Medium Posts']
+    },
+    {
+      icon: '📖',
+      title: 'Academic Writing',
+      description: 'Perfect for research papers, theses, and academic documentation with citation support.',
+      examples: ['Research Papers', 'Thesis Writing', 'Study Notes']
+    },
+    {
+      icon: '📊',
+      title: 'Project Planning',
+      description: 'Create project documentation, meeting notes, and planning documents with tables and diagrams.',
+      examples: ['Project Plans', 'Meeting Notes', 'Requirements Docs']
+    }
+  ];
+
+
+
+  const integrations = [
+    { name: 'GitHub', icon: '🐙', description: 'Direct integration with GitHub repositories' },
+    { name: 'Notion', icon: '📝', description: 'Export directly to Notion pages' },
+    { name: 'WordPress', icon: '🌐', description: 'Publish to WordPress blogs' },
+    { name: 'Medium', icon: '📰', description: 'Publish articles to Medium' },
+    { name: 'Confluence', icon: '🏢', description: 'Export to Atlassian Confluence' },
+    { name: 'Slack', icon: '💬', description: 'Share documents in Slack channels' },
+    { name: 'Google Drive', icon: '📁', description: 'Save and sync with Google Drive' },
+    { name: 'Dropbox', icon: '📦', description: 'Cloud storage with Dropbox' }
+  ];
+
+  const faqs = [
+    {
+      question: 'Is MarkdownProX really free?',
+      answer: 'Yes! Our basic version is completely free forever. No hidden costs, no time limits. You can upgrade to Pro for advanced features.'
+    },
+    {
+      question: 'Can I use it offline?',
+      answer: 'Absolutely! MarkdownProX works completely offline. Your documents are saved locally, and you can work without an internet connection.'
+    },
+    {
+      question: 'What file formats can I export to?',
+      answer: 'We support 10+ export formats including PDF, HTML, DOCX, LaTeX, and more. You can also copy formatted text directly to other applications.'
+    },
+    {
+      question: 'Is my data secure?',
+      answer: 'Your data is stored locally on your device by default. For Pro users, we offer encrypted cloud sync with industry-standard security protocols.'
+    },
+    {
+      question: 'Can I customize the editor?',
+      answer: 'Yes! Customize themes, keyboard shortcuts, editor layout, and more. Pro users get access to advanced customization options.'
+    },
+    {
+      question: 'Do you offer student discounts?',
+      answer: 'Yes! Students get 50% off Pro plans with a valid student email address. Contact our support team for verification.'
+    }
+  ];
+
   useEffect(() => {
     const savedTheme = localStorage.getItem('markdownprox_theme');
     if (savedTheme === 'dark') setIsDark(true);
@@ -311,22 +405,223 @@ export default function MarkdownProXLanding() {
         </div>
       </section>
 
-      {/* Stats Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8">
+      {/* Enhanced Stats Section */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-blue-50 to-purple-50 dark:from-gray-800 dark:to-gray-900">
         <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
-            <div>
-              <div className="text-4xl font-bold text-blue-600 mb-2">50+</div>
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold mb-4">Trusted by Professionals Worldwide</h2>
+            <p className="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+              Join thousands of writers, developers, and content creators who rely on MarkdownProX daily.
+            </p>
+          </div>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+            <div className="transform hover:scale-105 transition-transform duration-200">
+              <div className="text-5xl font-bold text-blue-600 mb-2 animate-pulse">50+</div>
               <div className="text-gray-600 dark:text-gray-300">Keyboard Shortcuts</div>
             </div>
-            <div>
-              <div className="text-4xl font-bold text-purple-600 mb-2">10+</div>
+            <div className="transform hover:scale-105 transition-transform duration-200">
+              <div className="text-5xl font-bold text-purple-600 mb-2 animate-pulse">10+</div>
               <div className="text-gray-600 dark:text-gray-300">Export Formats</div>
             </div>
-            <div>
-              <div className="text-4xl font-bold text-pink-600 mb-2">100%</div>
+            <div className="transform hover:scale-105 transition-transform duration-200">
+              <div className="text-5xl font-bold text-pink-600 mb-2 animate-pulse">10k+</div>
+              <div className="text-gray-600 dark:text-gray-300">Active Users</div>
+            </div>
+            <div className="transform hover:scale-105 transition-transform duration-200">
+              <div className="text-5xl font-bold text-green-600 mb-2 animate-pulse">100%</div>
               <div className="text-gray-600 dark:text-gray-300">Free & Open Source</div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Testimonials Section */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white dark:bg-gray-800">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold mb-4">What Our Users Say</h2>
+            <p className="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+              Don't just take our word for it. Here's what professionals are saying about MarkdownProX.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {testimonials.map((testimonial, index) => (
+              <div
+                key={index}
+                className="bg-gray-100 dark:bg-gray-900 rounded-xl p-6 hover:shadow-lg transition-all duration-200 hover:-translate-y-1"
+              >
+                <div className="flex items-center mb-4">
+                  <div className="text-4xl mr-4">{testimonial.image}</div>
+                  <div>
+                    <h4 className="font-semibold">{testimonial.name}</h4>
+                    <p className="text-sm text-gray-600 dark:text-gray-300">{testimonial.role}</p>
+                    <p className="text-sm text-gray-500 dark:text-gray-400">{testimonial.company}</p>
+                  </div>
+                </div>
+                <div className="flex mb-3">
+                  {[...Array(testimonial.rating)].map((_, i) => (
+                    <span key={i} className="text-yellow-500">⭐</span>
+                  ))}
+                </div>
+                <p className="text-gray-700 dark:text-gray-300 italic">"{testimonial.quote}"</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Use Cases Section */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-200 dark:bg-gray-900">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold mb-4">Perfect for Every Use Case</h2>
+            <p className="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+              Whether you're a developer, writer, student, or content creator, MarkdownProX adapts to your needs.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {useCases.map((useCase, index) => (
+              <div
+                key={index}
+                className="bg-white dark:bg-gray-800 rounded-xl p-6 hover:shadow-lg transition-all duration-200 hover:-translate-y-1"
+              >
+                <div className="text-4xl mb-4">{useCase.icon}</div>
+                <h3 className="text-xl font-semibold mb-3">{useCase.title}</h3>
+                <p className="text-gray-600 dark:text-gray-300 mb-4">{useCase.description}</p>
+                <div className="space-y-1">
+                  {useCase.examples.map((example, exIndex) => (
+                    <div key={exIndex} className="text-sm text-blue-600 dark:text-blue-400">
+                      • {example}
+                    </div>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Open Source Section */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white dark:bg-gray-800">
+        <div className="max-w-6xl mx-auto text-center">
+          <h2 className="text-4xl font-bold mb-4">100% Free & Open Source</h2>
+          <p className="text-xl text-gray-600 dark:text-gray-300 mb-12">
+            No hidden fees, no paywalls. You get all the features, forever.
+          </p>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 text-left ">
+            {/* Features */}
+            <div className="pr-6">
+              <h3 className="text-2xl font-bold mb-6">✨ Features</h3>
+              <ul className="space-y-4">
+                <li className="flex items-start">
+                  <span className="text-green-500 mr-3">✓</span>
+                  <span className="text-gray-700 dark:text-gray-300">Full access to all features without restrictions</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-green-500 mr-3">✓</span>
+                  <span className="text-gray-700 dark:text-gray-300">Self-host or deploy on any cloud provider</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-green-500 mr-3">✓</span>
+                  <span className="text-gray-700 dark:text-gray-300">Regular updates and active roadmap</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-green-500 mr-3">✓</span>
+                  <span className="text-gray-700 dark:text-gray-300">Modern tech stack with scalable architecture</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-green-500 mr-3">✓</span>
+                  <span className="text-gray-700 dark:text-gray-300">Works seamlessly with dark & light mode</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-green-500 mr-3">✓</span>
+                  <span className="text-gray-700 dark:text-gray-300">Extensible via plugins and integrations</span>
+                </li>
+              </ul>
+            </div>
+
+
+            {/* Benefits */}
+            <div className="pl-6">
+              <h3 className="text-2xl font-bold mb-6">💡 Benefits</h3>
+              <ul className="space-y-4">
+                <li className="flex items-start">
+                  <span className="text-green-500 mr-3">✓</span>
+                  <span className="text-gray-700 dark:text-gray-300">Community-driven with open contributions</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-green-500 mr-3">✓</span>
+                  <span className="text-gray-700 dark:text-gray-300">No vendor lock-in — your data stays yours</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-green-500 mr-3">✓</span>
+                  <span className="text-gray-700 dark:text-gray-300">Completely free, forever</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-green-500 mr-3">✓</span>
+                  <span className="text-gray-700 dark:text-gray-300">Backed by passionate developers worldwide</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-green-500 mr-3">✓</span>
+                  <span className="text-gray-700 dark:text-gray-300">Transparent development process</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-green-500 mr-3">✓</span>
+                  <span className="text-gray-700 dark:text-gray-300">Scales with your needs, small or large</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+
+
+      {/* Integrations Section */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-200 dark:bg-gray-900">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold mb-4">Seamless Integrations</h2>
+            <p className="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+              Connect with your favorite tools and platforms. Export, publish, and share with ease.
+            </p>
+          </div>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+            {integrations.map((integration, index) => (
+              <div
+                key={index}
+                className="bg-white dark:bg-gray-800 rounded-xl p-6 text-center hover:shadow-lg transition-all duration-200 hover:-translate-y-1"
+              >
+                <div className="text-4xl mb-3">{integration.icon}</div>
+                <h4 className="font-semibold mb-2">{integration.name}</h4>
+                <p className="text-sm text-gray-600 dark:text-gray-300">{integration.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white dark:bg-gray-800">
+        <div className="max-w-4xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold mb-4">Frequently Asked Questions</h2>
+            <p className="text-xl text-gray-600 dark:text-gray-300">
+              Got questions? We've got answers. Can't find what you're looking for? Contact our support team.
+            </p>
+          </div>
+          <div className="space-y-6">
+            {faqs.map((faq, index) => (
+              <div
+                key={index}
+                className="bg-gray-100 dark:bg-gray-900 rounded-xl p-6 hover:shadow-lg transition-shadow duration-200"
+              >
+                <h4 className="text-lg font-semibold mb-3">{faq.question}</h4>
+                <p className="text-gray-600 dark:text-gray-300">{faq.answer}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
