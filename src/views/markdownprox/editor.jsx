@@ -816,48 +816,46 @@ Term 2
       <div className="max-w-7xl mx-auto py-6 px-4">
         {/* Header with file tabs and controls - Sticky */}
         <header className="sticky top-0 z-40 backdrop-blur-md bg-white/90 dark:bg-gray-900/90 border-b border-gray-200 dark:border-gray-700 shadow-sm mb-4">
-          <div className="flex items-center justify-between p-4">
-            <div className="flex items-center gap-4">
-              <div className="flex items-center gap-3">
-                <div className="w-10 h-10 bg-gradient-to-br from-blue-500 via-purple-500 to-pink-500 rounded-xl flex items-center justify-center shadow-lg">
-                  <span className="text-white font-bold text-lg">{APP_NAME_SHORT}</span>
-                </div>
-                <Link to={ROUTES.LANDING} className="text-2xl font-bold bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent">
-                  {APP_NAME}
-                </Link>
+          <div className="flex items-center justify-start gap-4 p-4">
+            <div className="flex items-center gap-3">
+              <div className="w-10 h-10 bg-gradient-to-br from-blue-500 via-purple-500 to-pink-500 rounded-xl flex items-center justify-center shadow-lg">
+                <span className="text-white font-bold text-lg">{APP_NAME_SHORT}</span>
               </div>
+              <Link to={ROUTES.LANDING} className="text-2xl font-bold bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent">
+                {APP_NAME}
+              </Link>
+            </div>
 
-              {/* File tabs */}
-              <div className="flex items-center gap-1">
-                {files.map(file => (
-                  <div key={file.id} className="flex items-center gap-2">
+            {/* File tabs */}
+            <div className="flex items-center gap-1 overflow-x-auto text-nowrap scrollbar-hide">
+              {files.map(file => (
+                <div key={file.id} className="flex items-center gap-2">
+                  <button
+                    onClick={() => switchFile(file.id)}
+                    className={`px-3 py-1 rounded-t text-sm ${activeFileId === file.id
+                      ? 'bg-white dark:bg-gray-800 border-t border-l border-r border-gray-300 dark:border-gray-600'
+                      : 'bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600'
+                      }`}
+                  >
+                    {file.name}
+                  </button>
+                  {files.length > 1 && (
                     <button
-                      onClick={() => switchFile(file.id)}
-                      className={`px-3 py-1 rounded-t text-sm ${activeFileId === file.id
-                        ? 'bg-white dark:bg-gray-800 border-t border-l border-r border-gray-300 dark:border-gray-600'
-                        : 'bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600'
-                        }`}
+                      onClick={() => deleteFile(file.id)}
+                      className="text-gray-500 hover:text-red-500 text-xs"
                     >
-                      {file.name}
+                      ×
                     </button>
-                    {files.length > 1 && (
-                      <button
-                        onClick={() => deleteFile(file.id)}
-                        className="text-gray-500 hover:text-red-500 text-xs"
-                      >
-                        ×
-                      </button>
-                    )}
-                  </div>
-                ))}
-                <button
-                  onClick={newFile}
-                  className="px-2 py-1 text-gray-500 hover:text-gray-700 dark:hover:text-gray-300 text-sm"
-                  title="New File (Ctrl+N)"
-                >
-                  +
-                </button>
-              </div>
+                  )}
+                </div>
+              ))}
+              <button
+                onClick={newFile}
+                className="px-2 py-1 text-gray-500 hover:text-gray-700 dark:hover:text-gray-300 text-sm"
+                title="New File (Ctrl+N)"
+              >
+                +
+              </button>
             </div>
 
             <div className="flex items-center gap-2">
