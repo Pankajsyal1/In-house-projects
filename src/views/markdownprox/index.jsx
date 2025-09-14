@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { ROUTES } from '../../constants/routes';
+import { APP_NAME, APP_NAME_SHORT, APP_VERSION, AUTHOR, YEAR } from '../../config';
 
 export default function MarkdownProXLanding() {
   const navigate = useNavigate();
@@ -57,7 +58,7 @@ export default function MarkdownProXLanding() {
       role: "Technical Writer",
       company: "TechCorp",
       image: "👩‍💻",
-      quote: "MarkdownProX has revolutionized my documentation workflow. The real-time preview and keyboard shortcuts save me hours every day.",
+      quote: `${APP_NAME} has revolutionized my documentation workflow. The real-time preview and keyboard shortcuts save me hours every day.`,
       rating: 5
     },
     {
@@ -120,12 +121,12 @@ export default function MarkdownProXLanding() {
 
   const faqs = [
     {
-      question: 'Is MarkdownProX really free?',
+      question: `Is ${APP_NAME} really free?`,
       answer: 'Yes! Our basic version is completely free forever. No hidden costs, no time limits. You can upgrade to Pro for advanced features.'
     },
     {
       question: 'Can I use it offline?',
-      answer: 'Absolutely! MarkdownProX works completely offline. Your documents are saved locally, and you can work without an internet connection.'
+      answer: `Absolutely! ${APP_NAME} works completely offline. Your documents are saved locally, and you can work without an internet connection.`
     },
     {
       question: 'What file formats can I export to?',
@@ -175,10 +176,10 @@ export default function MarkdownProXLanding() {
           <div className="flex items-center justify-between h-16">
             <Link to={ROUTES.LANDING} v className="flex items-center gap-3">
               <span className="w-10 h-10 bg-gradient-to-br from-blue-500 via-purple-500 to-pink-500 rounded-xl flex items-center justify-center shadow-lg">
-                <span className="text-white font-bold text-lg">MX</span>
+                <span className="text-white font-bold text-lg">{APP_NAME_SHORT}</span>
               </span>
               <h1 className="text-2xl font-bold bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent">
-                MarkdownProX
+                {APP_NAME}
               </h1>
             </Link>
             <div className="flex items-center gap-4">
@@ -271,7 +272,7 @@ export default function MarkdownProXLanding() {
           <div className="text-center">
             <h1 className="text-5xl md:text-7xl font-bold mb-6">
               <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent">
-                MarkdownProX
+                {APP_NAME}
               </span>
             </h1>
             <p className="text-xl md:text-2xl text-gray-200 mb-8 max-w-3xl mx-auto">
@@ -371,7 +372,7 @@ export default function MarkdownProXLanding() {
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold mb-4">See It In Action</h2>
             <p className="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-              Experience the power of MarkdownProX with our interactive demo.
+              Experience the power of {APP_NAME} with our interactive demo.
             </p>
           </div>
 
@@ -381,10 +382,10 @@ export default function MarkdownProXLanding() {
                 <div className="w-3 h-3 bg-red-500 rounded-full"></div>
                 <div className="w-3 h-3 bg-yellow-500 rounded-full"></div>
                 <div className="w-3 h-3 bg-green-500 rounded-full"></div>
-                <span className="ml-4 text-gray-400 text-sm">MarkdownProX Editor</span>
+                <span className="ml-4 text-gray-400 text-sm">{APP_NAME} Editor</span>
               </div>
               <div className="text-green-400 font-mono text-sm">
-                <div># Welcome to MarkdownProX</div>
+                <div># Welcome to {APP_NAME}</div>
                 <div className="text-gray-400">This is a **powerful** markdown editor with:</div>
                 <div className="text-gray-400">- Real-time preview</div>
                 <div className="text-gray-400">- Advanced formatting</div>
@@ -411,7 +412,7 @@ export default function MarkdownProXLanding() {
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold mb-4">Trusted by Professionals Worldwide</h2>
             <p className="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-              Join thousands of writers, developers, and content creators who rely on MarkdownProX daily.
+              Join thousands of writers, developers, and content creators who rely on {APP_NAME} daily.
             </p>
           </div>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
@@ -441,7 +442,7 @@ export default function MarkdownProXLanding() {
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold mb-4">What Our Users Say</h2>
             <p className="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-              Don't just take our word for it. Here's what professionals are saying about MarkdownProX.
+              Don't just take our word for it. Here's what professionals are saying about {APP_NAME}.
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -476,7 +477,7 @@ export default function MarkdownProXLanding() {
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold mb-4">Perfect for Every Use Case</h2>
             <p className="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-              Whether you're a developer, writer, student, or content creator, MarkdownProX adapts to your needs.
+              Whether you're a developer, writer, student, or content creator, {APP_NAME} adapts to your needs.
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -631,7 +632,7 @@ export default function MarkdownProXLanding() {
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-4xl font-bold text-white mb-6">Ready to Start Writing?</h2>
           <p className="text-xl text-blue-100 mb-8">
-            Join thousands of writers, developers, and content creators who use MarkdownProX daily.
+            Join thousands of writers, developers, and content creators who use {APP_NAME} daily.
           </p>
           <button
             onClick={scrollToEditor}
@@ -649,9 +650,9 @@ export default function MarkdownProXLanding() {
             <div>
               <div className="flex items-center gap-3 mb-4">
                 <div className="w-8 h-8 bg-gradient-to-br from-blue-500 via-purple-500 to-pink-500 rounded-lg flex items-center justify-center">
-                  <span className="text-white font-bold text-sm">MX</span>
+                  <span className="text-white font-bold text-sm">{APP_NAME_SHORT}</span>
                 </div>
-                <h3 className="text-xl font-bold text-white">MarkdownProX</h3>
+                <h3 className="text-xl font-bold text-white">{APP_NAME}</h3>
               </div>
               <p className="text-gray-400">
                 Professional markdown editor with advanced features and beautiful design.
@@ -693,16 +694,16 @@ export default function MarkdownProXLanding() {
             <div className="flex flex-col md:flex-row items-center justify-between gap-4">
               <div className="flex items-center gap-3">
                 <div className="w-6 h-6 bg-gradient-to-br from-blue-500 via-purple-500 to-pink-500 rounded flex items-center justify-center">
-                  <span className="text-white font-bold text-xs">MX</span>
+                  <span className="text-white font-bold text-xs">{APP_NAME_SHORT}</span>
                 </div>
                 <div className="text-sm">
-                  Made with <span className="text-red-500 animate-pulse">❤️</span> by <span className="font-semibold text-blue-400">Pankaj</span>
+                  Made with <span className="text-red-500 animate-pulse">❤️</span> by <span className="font-semibold text-blue-400">{AUTHOR}</span>
                 </div>
               </div>
               <div className="flex items-center gap-6 text-sm">
-                <span>© {new Date().getFullYear()} MarkdownProX</span>
+                <span>&copy; {YEAR} {APP_NAME}</span>
                 <span>Powered by React & Tailwind CSS</span>
-                <span>Version 2.0</span>
+                <span>Version {APP_VERSION}</span>
               </div>
             </div>
           </div>

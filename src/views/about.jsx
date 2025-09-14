@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { ROUTES } from '../constants/routes';
+import { APP_NAME, APP_NAME_SHORT, AUTHOR } from '../config';
 
 export default function About() {
   const [isDark, setIsDark] = useState(false);
@@ -17,7 +18,7 @@ export default function About() {
 
   const teamMembers = [
     {
-      name: 'Pankaj',
+      name: AUTHOR,
       role: 'Founder & Lead Developer',
       description: 'Full-stack developer with 5+ years of experience in web technologies.',
       avatar: '👨‍💻'
@@ -67,10 +68,10 @@ export default function About() {
           <div className="flex items-center justify-between h-16">
             <Link to={ROUTES.LANDING} className="flex items-center gap-3">
               <span className="w-10 h-10 bg-gradient-to-br from-blue-500 via-purple-500 to-pink-500 rounded-xl flex items-center justify-center shadow-lg">
-                <span className="text-white font-bold text-lg">MX</span>
+                <span className="text-white font-bold text-lg">{APP_NAME_SHORT}</span>
               </span>
               <h1 className="text-2xl font-bold bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent">
-                MarkdownProX
+                {APP_NAME}
               </h1>
             </Link>
             <div className="flex items-center gap-4">
@@ -96,7 +97,7 @@ export default function About() {
       <section className="py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto text-center">
           <h1 className="text-5xl font-bold mb-6 bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent">
-            About MarkdownProX
+            About {APP_NAME}
           </h1>
           <p className="text-xl text-gray-600 dark:text-gray-300 mb-8 max-w-3xl mx-auto">
             We're passionate about creating the best markdown editing experience for writers,
@@ -112,7 +113,7 @@ export default function About() {
             <h2 className="text-3xl font-bold mb-6 text-center text-blue-600 dark:text-blue-400">Our Story</h2>
             <div className="prose prose-lg dark:prose-invert max-w-none">
               <p className="text-gray-700 dark:text-gray-300 mb-6">
-                MarkdownProX was born from a simple need: a powerful, privacy-focused markdown editor
+                {APP_NAME} was born from a simple need: a powerful, privacy-focused markdown editor
                 that doesn't compromise on features or user experience. As developers and writers ourselves,
                 we were frustrated with existing solutions that either lacked essential features or
                 required us to sacrifice our privacy.
@@ -123,7 +124,7 @@ export default function About() {
                 usability in mind.
               </p>
               <p className="text-gray-700 dark:text-gray-300">
-                Today, MarkdownProX serves thousands of users worldwide, from individual bloggers to
+                Today, {APP_NAME} serves thousands of users worldwide, from individual bloggers to
                 large development teams, all united by their need for a reliable, feature-rich, and
                 privacy-respecting writing tool.
               </p>
@@ -190,7 +191,7 @@ export default function About() {
                 to={ROUTES.EDITOR}
                 className="px-8 py-3 border-2 border-white text-white rounded-lg hover:bg-white hover:text-blue-600 transition-all duration-200 font-semibold"
               >
-                Try MarkdownProX
+                Try {APP_NAME}
               </Link>
             </div>
           </div>
@@ -216,7 +217,7 @@ export default function About() {
           </div>
           <div className="mt-8 pt-8 border-t border-gray-300 dark:border-gray-700">
             <p className="text-gray-600 dark:text-gray-400">
-              Made with <span className="text-red-500 animate-pulse">❤️</span> by the MarkdownProX Team
+              Made with <span className="text-red-500 animate-pulse">❤️</span> by the {APP_NAME} Team
             </p>
           </div>
         </div>

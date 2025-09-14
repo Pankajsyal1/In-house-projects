@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { ROUTES } from '../constants/routes';
+import { APP_NAME, APP_NAME_SHORT } from '../config';
 
 export default function PrivacyPolicy() {
   const [isDark, setIsDark] = useState(false);
@@ -23,10 +24,10 @@ export default function PrivacyPolicy() {
           <div className="flex items-center justify-between h-16">
             <Link to={ROUTES.LANDING} className="flex items-center gap-3">
               <span className="w-10 h-10 bg-gradient-to-br from-blue-500 via-purple-500 to-pink-500 rounded-xl flex items-center justify-center shadow-lg">
-                <span className="text-white font-bold text-lg">MX</span>
+                <span className="text-white font-bold text-lg">{APP_NAME_SHORT}</span>
               </span>
               <h1 className="text-2xl font-bold bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent">
-                MarkdownProX
+                {APP_NAME}
               </h1>
             </Link>
             <div className="flex items-center gap-4">
@@ -63,7 +64,7 @@ export default function PrivacyPolicy() {
             <section className="mb-8">
               <h2 className="text-2xl font-semibold mb-4 text-blue-600 dark:text-blue-400">1. Introduction</h2>
               <p className="text-gray-700 dark:text-gray-300 mb-4">
-                Welcome to MarkdownProX ("we," "our," or "us"). This Privacy Policy explains how we collect,
+                Welcome to {APP_NAME} ("we," "our," or "us"). This Privacy Policy explains how we collect,
                 use, disclose, and safeguard your information when you use our markdown editor application.
                 Please read this privacy policy carefully. If you do not agree with the terms of this privacy
                 policy, please do not access the application.
@@ -75,7 +76,7 @@ export default function PrivacyPolicy() {
 
               <h3 className="text-xl font-medium mb-3 text-purple-600 dark:text-purple-400">2.1 Local Storage</h3>
               <p className="text-gray-700 dark:text-gray-300 mb-4">
-                MarkdownProX stores the following information locally on your device:
+                {APP_NAME} stores the following information locally on your device:
               </p>
               <ul className="list-disc pl-6 mb-4 text-gray-700 dark:text-gray-300">
                 <li>Your preferred theme (dark/light mode)</li>
@@ -120,7 +121,7 @@ export default function PrivacyPolicy() {
             <section className="mb-8">
               <h2 className="text-2xl font-semibold mb-4 text-blue-600 dark:text-blue-400">5. Third-Party Services</h2>
               <p className="text-gray-700 dark:text-gray-300 mb-4">
-                MarkdownProX may use the following third-party services:
+                {APP_NAME} may use the following third-party services:
               </p>
               <ul className="list-disc pl-6 mb-4 text-gray-700 dark:text-gray-300">
                 <li><strong>CDN Services:</strong> For loading external libraries and resources</li>
@@ -147,7 +148,7 @@ export default function PrivacyPolicy() {
             <section className="mb-8">
               <h2 className="text-2xl font-semibold mb-4 text-blue-600 dark:text-blue-400">7. Children's Privacy</h2>
               <p className="text-gray-700 dark:text-gray-300 mb-4">
-                MarkdownProX is suitable for users of all ages. Since we do not collect personal information,
+                {APP_NAME} is suitable for users of all ages. Since we do not collect personal information,
                 there are no special considerations for children's privacy. However, we recommend parental
                 supervision for children under 13 when using any web application.
               </p>
@@ -170,7 +171,7 @@ export default function PrivacyPolicy() {
               <div className="bg-gray-100 dark:bg-gray-700 p-4 rounded-lg">
                 <p className="text-gray-700 dark:text-gray-300">
                   <strong>Email:</strong> privacy@markdownprox.com<br />
-                  <strong>Website:</strong> <Link to={ROUTES.LANDING} className="text-blue-600 dark:text-blue-400 hover:underline">MarkdownProX.com</Link>
+                  <strong>Website:</strong> <Link to={ROUTES.LANDING} className="text-blue-600 dark:text-blue-400 hover:underline">{APP_NAME}.com</Link>
                 </p>
               </div>
             </section>

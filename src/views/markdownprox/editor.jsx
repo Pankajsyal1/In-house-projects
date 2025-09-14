@@ -5,6 +5,7 @@
 import React, { useEffect, useRef, useState, useCallback } from "react";
 import { Link } from "react-router-dom";
 import { ROUTES } from "../../constants/routes";
+import { APP_NAME, APP_NAME_SHORT, APP_VERSION, AUTHOR, YEAR } from "../../config";
 
 export default function MarkdownProX() {
   const LOCAL_KEY = "markdownprox_content_v1";
@@ -40,7 +41,7 @@ export default function MarkdownProX() {
   const commandInputRef = useRef(null);
 
   // initial sample
-  const SAMPLE = `# Welcome to MarkdownProX
+  const SAMPLE = `# Welcome to ${APP_NAME}
 
 This is a **professional** markdown editor with powerful features and advanced capabilities.
 
@@ -819,10 +820,10 @@ Term 2
             <div className="flex items-center gap-4">
               <div className="flex items-center gap-3">
                 <div className="w-10 h-10 bg-gradient-to-br from-blue-500 via-purple-500 to-pink-500 rounded-xl flex items-center justify-center shadow-lg">
-                  <span className="text-white font-bold text-lg">MX</span>
+                  <span className="text-white font-bold text-lg">{APP_NAME_SHORT}</span>
                 </div>
                 <Link to={ROUTES.LANDING} className="text-2xl font-bold bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent">
-                  MarkdownProX
+                  {APP_NAME}
                 </Link>
               </div>
 
@@ -1406,21 +1407,21 @@ Term 2
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
             <div className="flex items-center gap-3">
               <div className="w-8 h-8 bg-gradient-to-br from-blue-500 via-purple-500 to-pink-500 rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-sm">MX</span>
+                <span className="text-white font-bold text-sm">{APP_NAME_SHORT}</span>
               </div>
               <div className="text-sm text-gray-600 dark:text-gray-400">
-                Made with <span className="text-red-500 animate-pulse">❤️</span> by <span className="font-semibold text-blue-600 dark:text-blue-400">Pankaj</span>
+                Made with <span className="text-red-500 animate-pulse">❤️</span> by <span className="font-semibold text-blue-600 dark:text-blue-400">{AUTHOR}</span>
               </div>
             </div>
             <div className="flex items-center gap-6 text-sm text-gray-500 dark:text-gray-400">
               <div className="flex items-center gap-2">
-                <span>© {new Date().getFullYear()} MarkdownProX</span>
+                <span>&copy; {YEAR} {APP_NAME}</span>
               </div>
               <div className="flex items-center gap-2">
                 <span>Powered by React & Tailwind CSS</span>
               </div>
               <div className="flex items-center gap-2">
-                <span>Version 2.0</span>
+                <span>Version {APP_VERSION}</span>
               </div>
             </div>
           </div>

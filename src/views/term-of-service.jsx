@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { ROUTES } from '../constants/routes';
+import { APP_NAME, APP_NAME_SHORT } from '../config';
 
 export default function TermsOfService() {
   const [isDark, setIsDark] = useState(false);
@@ -23,10 +24,10 @@ export default function TermsOfService() {
           <div className="flex items-center justify-between h-16">
             <Link to={ROUTES.LANDING} className="flex items-center gap-3">
               <span className="w-10 h-10 bg-gradient-to-br from-blue-500 via-purple-500 to-pink-500 rounded-xl flex items-center justify-center shadow-lg">
-                <span className="text-white font-bold text-lg">MX</span>
+                <span className="text-white font-bold text-lg">{APP_NAME_SHORT}</span>
               </span>
               <h1 className="text-2xl font-bold bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent">
-                MarkdownProX
+                {APP_NAME}
               </h1>
             </Link>
             <div className="flex items-center gap-4">
@@ -63,7 +64,7 @@ export default function TermsOfService() {
             <section className="mb-8">
               <h2 className="text-2xl font-semibold mb-4 text-blue-600 dark:text-blue-400">1. Acceptance of Terms</h2>
               <p className="text-gray-700 dark:text-gray-300 mb-4">
-                By accessing and using MarkdownProX ("the Service"), you accept and agree to be bound by the
+                By accessing and using {APP_NAME} ("the Service"), you accept and agree to be bound by the
                 terms and provision of this agreement. If you do not agree to abide by the above, please do
                 not use this service.
               </p>
@@ -72,7 +73,7 @@ export default function TermsOfService() {
             <section className="mb-8">
               <h2 className="text-2xl font-semibold mb-4 text-blue-600 dark:text-blue-400">2. Description of Service</h2>
               <p className="text-gray-700 dark:text-gray-300 mb-4">
-                MarkdownProX is a web-based markdown editor that provides:
+                {APP_NAME} is a web-based markdown editor that provides:
               </p>
               <ul className="list-disc pl-6 mb-4 text-gray-700 dark:text-gray-300">
                 <li>Real-time markdown editing and preview</li>
@@ -88,7 +89,7 @@ export default function TermsOfService() {
 
               <h3 className="text-xl font-medium mb-3 text-purple-600 dark:text-purple-400">3.1 Appropriate Use</h3>
               <p className="text-gray-700 dark:text-gray-300 mb-4">
-                You agree to use MarkdownProX only for lawful purposes and in accordance with these Terms.
+                You agree to use {APP_NAME} only for lawful purposes and in accordance with these Terms.
                 You agree not to use the Service:
               </p>
               <ul className="list-disc pl-6 mb-4 text-gray-700 dark:text-gray-300">
@@ -101,7 +102,7 @@ export default function TermsOfService() {
 
               <h3 className="text-xl font-medium mb-3 text-purple-600 dark:text-purple-400">3.2 Content Responsibility</h3>
               <p className="text-gray-700 dark:text-gray-300 mb-4">
-                You are solely responsible for all content you create, edit, or store using MarkdownProX.
+                You are solely responsible for all content you create, edit, or store using {APP_NAME}.
                 We do not monitor or review content, and you retain all rights to your content.
               </p>
             </section>
@@ -110,7 +111,7 @@ export default function TermsOfService() {
               <h2 className="text-2xl font-semibold mb-4 text-blue-600 dark:text-blue-400">4. Intellectual Property Rights</h2>
               <p className="text-gray-700 dark:text-gray-300 mb-4">
                 The Service and its original content, features, and functionality are and will remain the
-                exclusive property of MarkdownProX and its licensors. The Service is protected by copyright,
+                exclusive property of {APP_NAME} and its licensors. The Service is protected by copyright,
                 trademark, and other laws. Our trademarks and trade dress may not be used in connection with
                 any product or service without our prior written consent.
               </p>
@@ -142,7 +143,7 @@ export default function TermsOfService() {
             <section className="mb-8">
               <h2 className="text-2xl font-semibold mb-4 text-blue-600 dark:text-blue-400">7. Limitation of Liability</h2>
               <p className="text-gray-700 dark:text-gray-300 mb-4">
-                In no event shall MarkdownProX, nor its directors, employees, partners, agents, suppliers,
+                In no event shall {APP_NAME}, nor its directors, employees, partners, agents, suppliers,
                 or affiliates, be liable for any indirect, incidental, special, consequential, or punitive
                 damages, including without limitation, loss of profits, data, use, goodwill, or other
                 intangible losses, resulting from your use of the Service.
@@ -183,7 +184,7 @@ export default function TermsOfService() {
               <h2 className="text-2xl font-semibold mb-4 text-blue-600 dark:text-blue-400">11. Governing Law</h2>
               <p className="text-gray-700 dark:text-gray-300 mb-4">
                 These Terms shall be interpreted and governed by the laws of the jurisdiction in which
-                MarkdownProX operates, without regard to its conflict of law provisions. Our failure to
+                {APP_NAME} operates, without regard to its conflict of law provisions. Our failure to
                 enforce any right or provision of these Terms will not be considered a waiver of those rights.
               </p>
             </section>

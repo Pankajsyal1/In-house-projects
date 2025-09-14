@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { ROUTES } from '../constants/routes';
+import { APP_NAME, APP_NAME_SHORT } from '../config';
 
 export default function Contact() {
   const [isDark, setIsDark] = useState(false);
@@ -43,10 +44,10 @@ export default function Contact() {
           <div className="flex items-center justify-between h-16">
             <Link to={ROUTES.LANDING} className="flex items-center gap-3">
               <span className="w-10 h-10 bg-gradient-to-br from-blue-500 via-purple-500 to-pink-500 rounded-xl flex items-center justify-center shadow-lg">
-                <span className="text-white font-bold text-lg">MX</span>
+                <span className="text-white font-bold text-lg">{APP_NAME_SHORT}</span>
               </span>
               <h1 className="text-2xl font-bold bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent">
-                MarkdownProX
+                {APP_NAME}
               </h1>
             </Link>
             <div className="flex items-center gap-4">
