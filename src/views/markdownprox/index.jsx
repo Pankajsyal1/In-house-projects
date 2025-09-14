@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { ROUTES } from '../constants/routes';
+import { ROUTES } from '../../constants/routes';
 
 export default function MarkdownProXLanding() {
   const navigate = useNavigate();
@@ -376,10 +376,10 @@ export default function MarkdownProXLanding() {
             <div>
               <h4 className="text-lg font-semibold text-white mb-4">Support</h4>
               <ul className="space-y-2 text-gray-400">
-                <li>Documentation</li>
-                <li>Keyboard Shortcuts</li>
-                <li>GitHub Issues</li>
-                <li>Community</li>
+                <li><Link to={ROUTES.ABOUT}>About</Link></li>
+                <li><Link to={ROUTES.CONTACT}>Contact</Link></li>
+                <li><Link to={ROUTES.TERMS_OF_SERVICE}>Terms of Service</Link></li>
+                <li><Link to={ROUTES.PRIVACY_POLICY}>Privacy Policy</Link></li>
               </ul>
             </div>
 

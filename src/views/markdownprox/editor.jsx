@@ -3,8 +3,8 @@
 // Features: Advanced toolbar, keyboard shortcuts, file management, search/replace, word count, multiple export formats, real-time preview, and more.
 
 import React, { useEffect, useRef, useState, useCallback } from "react";
-import { ROUTES } from "../constants/routes";
 import { Link } from "react-router-dom";
+import { ROUTES } from "../../constants/routes";
 
 export default function MarkdownProX() {
   const LOCAL_KEY = "markdownprox_content_v1";
