@@ -159,7 +159,7 @@ export default function About() {
             {teamMembers.map((member, index) => (
               <div
                 key={index}
-                className="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow text-center"
+                className="bg-white dark:bg-gray-700 rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow text-center"
               >
                 <div className="text-6xl mb-4">{member.avatar}</div>
                 <h3 className="text-xl font-semibold mb-2 text-gray-900 dark:text-gray-100">{member.name}</h3>
